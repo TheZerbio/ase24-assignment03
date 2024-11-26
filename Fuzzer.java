@@ -59,6 +59,11 @@ public class Fuzzer {
         */
 
         System.out.println("---------------------Bye---------------------");
+        if(non_zero_exits==0){
+            System.exit(0);
+        }else{
+            System.exit(1);
+        }
     }
 
     private static ProcessBuilder getProcessBuilderForCommand(String command, String workingDirectory) {
