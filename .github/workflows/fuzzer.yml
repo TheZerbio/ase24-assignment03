@@ -1,0 +1,17 @@
+name: Fuzz Testing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  fuzz-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Run the fuzzer
+        run: java Fuzzer.java "./html_parser_linux_x86_64"
